@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 1, 2017 5:45:13 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="Register.Signup" table="users">
+        <id name="id" type="int" access="field">
+            <column name="userid" />
+            <generator class="increment" />
+        </id>
+        <property name="uname" type="java.lang.String">
+            <column name="username" />
+        </property>
+        <property name="pwd" type="java.lang.String">
+            <column name="password" />
+        </property>
+        <property name="eid" type="java.lang.String">
+            <column name="emailid" />
+        </property>
+    </class>
+</hibernate-mapping>
