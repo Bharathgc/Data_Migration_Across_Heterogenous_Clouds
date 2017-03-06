@@ -12,7 +12,6 @@ import javax.mail.internet.MimeMessage;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import Register.Signup;
@@ -22,27 +21,12 @@ import com.googlecode.s2hibernate.struts2.plugin.annotations.SessionTarget;
 import com.googlecode.s2hibernate.struts2.plugin.annotations.TransactionTarget;
 import com.opensymphony.xwork2.ActionSupport;
 
-class otpnum
-{
-	private int otpnum;
-	public otpnum()
-	{
-		
-	}
-	public void setotpnum(int otpnum)
-	{
-		this.otpnum= otpnum;
-	}
-	public int getotpnum()
-	{
-		return this.otpnum;
-	}
-}
+
+
 public class Signupmain extends ActionSupport 
 {
 	private static final long serialVersionUID = 1L;
-	private static SessionFactory factory; 
-	 @SessionTarget
+	@SessionTarget
 	 Session session;
 	 @TransactionTarget
 	 Transaction tx= null;
@@ -52,6 +36,7 @@ public class Signupmain extends ActionSupport
 	 private String  subject = "Datamigration Otp";
 	 private String msg;
    	 private String to ;
+   	 private int gotp;
 	 public String execute()
 	 {
 		 try
@@ -59,11 +44,13 @@ public class Signupmain extends ActionSupport
 			 Session session=new Configuration().configure("hibernate.cfg.xml").buildSessionFactory().openSession();
 			 Transaction t=session.beginTransaction();
 			 int i=(Integer)session.save(user);
+			 System.out.println(user.getUname());
 			 if(i!=0)
 			 {
 				 	int genotp;
 					Random rand = new Random();
 					genotp = rand.nextInt(100000);
+					gotp = genotp;
 					to = user.getEid();
 					System.out.println(genotp);
 					System.out.println(to);
@@ -125,7 +112,16 @@ public class Signupmain extends ActionSupport
 	     }
 	 }
 	 
-	 
+	 public String getresult(int recvotp)
+	 {
+		 System.out.println(recvotp);
+		 System.out.println(gotp);
+		 if(gotp == recvotp)
+			 return SUCCESS;
+		 
+		 else
+			 return ERROR;
+	 }
 	 public Signup getUser()
 	 {
 		return user;

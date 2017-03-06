@@ -9,9 +9,9 @@
 <body>
 <h1>Welcome User</h1>
 <p>otp has been sent to your Registered email address</p>
-<s:action name="otp">
-<s:textfield name="recvotp.otpnum" placeholder="5 digit number" />
+<s:form action="otpcheck" method="post">
+<s:textfield type="number" name="recvotpobj.otpnum" placeholder="5 digit number" />
 <s:submit />
-</s:action>
+</s:form>
 </body>
 </html>

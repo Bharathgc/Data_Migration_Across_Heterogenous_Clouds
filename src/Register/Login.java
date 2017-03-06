@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import Register.Signup;
@@ -18,7 +17,6 @@ public class Login extends ActionSupport
 {
 
 	private static final long serialVersionUID = 1L;
-	private static SessionFactory factory; 
 	@SessionTarget
 	Session session;
 	@TransactionTarget
@@ -38,7 +36,7 @@ public class Login extends ActionSupport
 		 System.out.println(user.getPwd());
 		 if (user.getUname().length() == 0) 
 		 {
-	            this.addFieldError("user.uname", "Name is required");
+	            this.addFieldError("user.uname", "Usernsame is required");
 	     }
 	     if (user.getPwd().length() == 0) 
 	     {
@@ -50,7 +48,8 @@ public class Login extends ActionSupport
 		 Query query = session.createQuery(hql);
 		 query.setParameter("username",user.getUname());
 		 query.setParameter("password", user.getPwd());
-		 List<Signup> results = query.list();
+		 @SuppressWarnings("unchecked")
+		List<Signup> results = query.list();
 		 System.out.println(results);
         if (results.size() > 0)
         {

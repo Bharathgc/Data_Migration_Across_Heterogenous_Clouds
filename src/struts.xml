@@ -14,6 +14,10 @@
             <result name="error">/signin.jsp</result>
       </action>
     
+    <action name="otpcheck" class="Register.Otpmain" method="check">
+            <result name="success">/welcome.jsp</result>
+            <result name="error">/otp.jsp</result>
+      </action>
 
    </package>
 </struts>
