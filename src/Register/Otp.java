@@ -2,22 +2,32 @@ package Register;
 
 public class Otp
 {
-	private int otpnum;
+	private int otp;
+	
 	public Otp()
 	{
+		
 	}
-	
-	public Otp(int otpnum)
+	public Otp(int otp)
 	{
-		this.otpnum = otpnum;
+		this.otp = otp;
 	}
-	
-	public void setotpnum(int otpnum)
+	public int getOtp()
 	{
-		this.otpnum= otpnum;
+		return otp;
 	}
-	public int getotpnum()
+	public void setOtp(int otp)
 	{
-		return otpnum;
+		this.otp = otp;
+	}
+	public String execute()
+	{
+		if(Signupmain.gotp== otp)
+		{
+			System.out.println(otp);
+			return "success";
+		}
+		else
+			return "error";
 	}
 }

@@ -36,11 +36,23 @@ public class Signupmain extends ActionSupport
 	 private String  subject = "Datamigration Otp";
 	 private String msg;
    	 private String to ;
-   	 private int gotp;
+   	 public static int gotp;
 	 public String execute()
 	 {
 		 try
 		 {
+			 if (user.getUname().length() == 0) 
+			 {
+		            this.addFieldError("user.uname", "Usernsame is required");
+		     }
+		     if (user.getPwd().length() == 0) 
+		     {
+		            this.addFieldError("user.pwd", "Password is required");
+		     }if (user.getEid().length() == 0) 
+			 {
+		            this.addFieldError("user.eid", "Emailid is required");
+		     }
+		     
 			 Session session=new Configuration().configure("hibernate.cfg.xml").buildSessionFactory().openSession();
 			 Transaction t=session.beginTransaction();
 			 int i=(Integer)session.save(user);
@@ -112,16 +124,7 @@ public class Signupmain extends ActionSupport
 	     }
 	 }
 	 
-	 public String getresult(int recvotp)
-	 {
-		 System.out.println(recvotp);
-		 System.out.println(gotp);
-		 if(gotp == recvotp)
-			 return SUCCESS;
-		 
-		 else
-			 return ERROR;
-	 }
+	
 	 public Signup getUser()
 	 {
 		return user;
