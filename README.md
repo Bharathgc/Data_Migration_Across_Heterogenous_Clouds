@@ -6,7 +6,7 @@ This project provided various features like Content Based Deduplication feature 
 
 # Getting Started
 
-Download the project using 'git clone' to the local machine
+Download the project using `git clone` to the local machine
 
 # Pre-Requisites
 
