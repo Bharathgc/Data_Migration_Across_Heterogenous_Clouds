@@ -5,18 +5,18 @@ There were existing solutions for this but they were downloading the files to th
 This project provided various features like Content Based Deduplication feature to avoid duplication and waste of storage. AES Encryption/Decryption feature to protect files during transmission. Compression/Decompression feature to help large files transmit successfully across the cloud without loss.
 
 ![Work Flow](https://github.com/Bharathgc/Data_Migration_Across_Heterogenous_Clouds/blob/master/Migration/Capture1.PNG)
-## Getting Started
+### Getting Started
 
 Download the project using `git clone` to the local machine
 
-## Pre-Requisites
+### Pre-Requisites
 
 - Install [jdk 1.7](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 - Install [MySQL 5.0](https://www.mysql.com/downloads/)
 - Install [Eclipse(Indigo)](http://www.eclipse.org/downloads/packages/release/indigo/sr2)
 - Install [Apache Tomcat 7.0](https://tomcat.apache.org/download-70.cgi)
 
-## Installing and Deployment
+### Installing and Deployment
 
 - Open eclipse and create or choose the workspace and create new J2EE project named "Migration".
 - Copy the source code and paste into workspace where you have created the project.
