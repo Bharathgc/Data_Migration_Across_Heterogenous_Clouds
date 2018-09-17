@@ -4,7 +4,7 @@ This project **simulates** the data migration of data (pdf, text files) across d
 There were existing solutions for this but they were downloading the files to their server and uploading onto the destination cloud. But our project transferred files across through network.
 This project provided various features like Content Based Deduplication feature to avoid duplication and waste of storage. AES Encryption/Decryption feature to protect files during transmission. Compression/Decompression feature to help large files transmit successfully across the cloud without loss.
 
-[image]()
+![Work Flow](https://github.com/Bharathgc/Data_Migration_Across_Heterogenous_Clouds/blob/master/Migration/Capture1.PNG)
 # Getting Started
 
 Download the project using `git clone` to the local machine
